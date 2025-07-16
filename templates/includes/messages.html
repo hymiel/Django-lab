@@ -1,0 +1,22 @@
+{% if messages %}
+    <script>
+        const hasMessages = true;
+    </script>
+{% else %}
+    <script>
+        const hasMessages = false;
+    </script>
+{% endif %}
+
+<!-- 모달 배경 -->
+<div id="custom-alert" class="custom-alert-overlay" style="display: none;">
+    <div class="custom-alert-box">
+        <div class="row">
+            <span class="mt-2" id="custom-alert-message"></span>
+            {% for message in messages %}
+                <span class="mt-2">{{ message }}</span>
+            {% endfor %}
+        </div>
+        <button class="btn btn-dark mt-3" onclick="closeCustomAlert()" id="custom-alert-confirm">확인</button>
+    </div>
+</div>

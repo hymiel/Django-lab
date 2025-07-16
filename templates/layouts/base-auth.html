@@ -1,0 +1,17 @@
+<!-- 로그인 화면용 base html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% include 'includes/head-auth.html' %}
+  {% block extrastyle %}{% endblock extrastyle %}
+</head>
+<body>
+
+  {% block content %}{% endblock content %}
+
+  {% include 'includes/scripts.html' %}
+  {% block extra_js %}{% endblock extra_js %}
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+
+{% block breadcrumbs %}{% endblock breadcrumbs %}
+
+{% block content %}
+    <main>
+        <div class="d-flex justify-content-center align-items-center" style="min-height: calc(100vh - 200px);">
+            <div class="text-center">
+                <div class="mb-2">
+                    <img src="{% static 'assets/images/common/warning-icon.png' %}" alt="Warning Icon" class="img-fluid" style="max-width: 300px;">
+                </div>
+                <h5 class="text-danger">존재하지 않는 페이지 입니다.</h5>
+                <h6 class="mt-4">
+                    요청하신 페이지가 존재하지 않거나, 이름이 변경되었거나, <br>
+                    일시적으로 사용이 중단되었어요.
+                </h6>
+            </div>
+        </div>
+    </main>
+{% endblock content %}
+

@@ -1,0 +1,27 @@
+{% load i18n static  %}
+<aside id="layoutSidenav_nav">
+    <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+
+        <div class="sb-sidenav-menu">
+            <div class="nav">
+                <a class="nav-link mt-3" href="/">
+                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    대시보드
+                </a>
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseMember" aria-expanded="false" aria-controls="collapseMember">
+                    <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
+                        그룹 API관리
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="collapseMember" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        {% url 'groups:group_list' as side_url %}
+                        <a class="nav-link {% if request.path == side_url or 'groups' in request.path and 'es' not in request.path %}active{% endif %}" href="{{side_url}}">그룹 목록</a>
+                        {% url 'groups:es_list' as side_url %}
+                        <a class="nav-link {% if request.path == side_url or 'groups/es' in request.path %}active{% endif %}" href="{{side_url}}">신규API 적용</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </nav>
+</aside>
