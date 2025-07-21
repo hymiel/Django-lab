@@ -6,6 +6,7 @@ Django Basic Exception
 4. Exception : 일반 서버 에러 500 page render
 
 """
+from rest_framework.response import Response
 
 """CustomAPIException : 기반 예외 클래스 만들기"""
 # exceptions/base.py
