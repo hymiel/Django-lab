@@ -332,7 +332,7 @@ SIMPLE_JWT = {
 
 
 # --------------------------------------------
-""" Logging 설정"""
+"""Logging 설정"""
 LOGGING = {
     'version': 1, # 로깅 설정 버전 (항상 1)
     'disable_existing_loggers': False, # 기존 로거 무효화 여부 : True일 경우 Django 내부 기본 로거나 써드파티 로거까지 전부 비활성화, 권장값은 False (필요한 로거만 덮어써서 사용 가능)
@@ -379,3 +379,16 @@ LOGGING = {
         },
     }
 }
+
+
+
+# --------------------------------------------
+"""메일 SMTP 설정"""
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'your_email@gmail.com' # 메일을 보낼 계정
+EMAIL_HOST_PASSWORD = 'your_email_password_or_app_password' # 해당계정의 비밀번호
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+# --------------------------------------------
